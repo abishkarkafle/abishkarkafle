@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abishkar Kafle | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f4f4f9; color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Container */
+    .container { max-width: 1100px; margin: auto; padding: 20px; }
+
+    /* Header */
+    header { background: #4f46e5; color: white; padding: 40px 0; text-align: center; }
+    header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    header p { font-size: 1.2rem; }
+
+    /* Nav */
+    nav { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+    nav a { color: white; font-weight: 600; transition: 0.3s; }
+    nav a:hover { color: #c7d2fe; }
+
+    /* Sections */
+    section { padding: 60px 0; }
+    section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; color: #4f46e5; }
+
+    /* About */
+    .about { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: center; }
+    .about img { border-radius: 50%; width: 200px; height: 200px; object-fit: cover; }
+    .about p { max-width: 600px; text-align: center; }
+
+    /* Skills */
+    .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .skill { background: white; padding: 20px 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-weight: 600; }
+
+    /* Projects */
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .project { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+    .project:hover { transform: translateY(-5px); box-shadow: 0 8px 12px rgba(0,0,0,0.15); }
+    .project h3 { margin-bottom: 10px; color: #4f46e5; }
+
+    /* Contact */
+    .contact { text-align: center; }
+    .contact a { display: inline-block; margin: 10px; padding: 10px 20px; background: #4f46e5; color: white; border-radius: 8px; transition: 0.3s; }
+    .contact a:hover { background: #3730a3; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px 0; background: #1f2937; color: white; }
+
+    @media(max-width: 768px) {
+      .about { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Abishkar Kafle</h1>
+    <p>IT Officer | Web Developer | Tech Enthusiast</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about">
+        <img src="https://via.placeholder.com/200" alt="Profile Picture">
+        <p>
+          I am a passionate IT professional with expertise in web development, system management, and technology integration. I enjoy building practical solutions that solve real-world problems and learning new technologies to expand my skills.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML & CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React.js</div>
+        <div class="skill">Python</div>
+        <div class="skill">Linux & Bash</div>
+        <div class="skill">Networking</div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">
+          <h3>Portfolio Website</h3>
+          <p>A responsive personal portfolio to showcase my projects and skills.</p>
+        </div>
+        <div class="project">
+          <h3>School Management System</h3>
+          <p>A web application to manage students, staff, and academic records efficiently.</p>
+        </div>
+        <div class="project">
+          <h3>Linux Automation Scripts</h3>
+          <p>Automated scripts for system maintenance and task scheduling in Linux environments.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact">
+        <a href="mailto:your.email@example.com">Email</a>
+        <a href="https://github.com/abishkarkafle" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/abishkarkafle" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Abishkar Kafle. All rights reserved.
+  </footer>
+
+</body>
+</html>
