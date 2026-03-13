@@ -321,8 +321,9 @@ footer {
   0%,100% { box-shadow: 0 0 0 4px rgba(200,135,58,0.2); }
   50%     { box-shadow: 0 0 0 8px rgba(200,135,58,0.08); }
 }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* Only hide reveal elements once JS has confirmed observer support */
+.js-reveal-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.js-reveal-ready .reveal.visible { opacity: 1; transform: none; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
@@ -525,4 +526,107 @@ footer {
 
 @media (max-width: 768px) {
   .labs-grid { grid-template-columns: 1fr; }
+}
+
+/* ── EXPERIENCE extras ── */
+.exp-context {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-style: italic;
+  border-left: 2px solid var(--rule);
+  padding-left: 0.9rem;
+}
+
+.exp-env-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  background: var(--off-white);
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  border-radius: 2px;
+  margin-top: 0.4rem;
+}
+
+/* ── SVG ICON STYLES ── */
+
+/* Roadmap node icons */
+.node-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.roadmap-node.future .node-icon {
+  filter: brightness(0) saturate(100%) invert(52%) sepia(8%) saturate(400%) hue-rotate(10deg);
+}
+
+/* Experience env tag icons */
+.env-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 2px;
+  margin-top: -2px;
+  filter: brightness(0) saturate(100%) invert(52%) sepia(8%) saturate(400%) hue-rotate(10deg);
+}
+
+/* Cert card icons */
+.cert-svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.cert-icon .cert-svg {
+  filter: brightness(0) saturate(100%) invert(24%) sepia(60%) saturate(800%) hue-rotate(195deg) brightness(90%);
+}
+
+.cert-icon.amber .cert-svg {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(60%) saturate(600%) hue-rotate(10deg);
+}
+
+/* Contact link icons */
+.contact-link-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.contact-svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(5%) saturate(300%) hue-rotate(10deg);
+  transition: filter 0.2s;
+}
+
+.contact-link:hover .contact-svg {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(60%) saturate(600%) hue-rotate(10deg);
+}
+
+/* Lab placeholder camera icon */
+.lab-placeholder-icon {
+  width: 36px;
+  height: 36px;
+  display: block;
+  margin: 0 auto;
+  filter: brightness(0) saturate(100%) invert(75%) sepia(5%) saturate(200%) hue-rotate(10deg);
+}
+
+/* Labs note lightbulb */
+.labs-note-svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(55%) sepia(60%) saturate(600%) hue-rotate(10deg);
 }
