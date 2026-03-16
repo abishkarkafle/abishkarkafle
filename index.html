@@ -13,6 +13,19 @@
 
 <!-- NAV -->
 <nav>
+  <!-- gradient def for progress ring -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="nav-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#1c4f8a"/>
+        <stop offset="100%" stop-color="#c8873a"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <svg class="nav-progress-ring" id="nav-progress-ring" aria-hidden="true">
+    <rect class="nav-progress-track" id="nav-progress-track" rx="100"/>
+    <rect class="nav-progress-fill" id="nav-progress-fill" rx="100"/>
+  </svg>
   <div class="nav-inner">
     <div class="nav-logo">Abishkar <span>Kafle</span></div>
     <ul class="nav-links">
@@ -22,6 +35,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#labs">Labs</a></li>
       <li><a href="#certs">Certifications</a></li>
+      <li><a href="#availability">Availability</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -29,11 +43,13 @@
 
 <!-- HERO -->
 <section id="hero">
+  <!-- Animated network topology background -->
+  <canvas id="hero-canvas"></canvas>
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-eyebrow">IT Officer &middot; CCNA Candidate</div>
       <h1 class="hero-name">Abishkar<br><em>Kafle</em></h1>
-      <p class="hero-title">IT Support &middot; Networking Fundamentals &middot; Future ISP Engineer</p>
+      <p class="hero-title"><span id="typewriter"></span><span class="typewriter-cursor">|</span></p>
       <div class="hero-divider"></div>
       <p class="hero-desc">
         Two years into my IT career and actively building toward a future in networking. Currently studying for CCNA, with a clear goal: join an ISP, grow into network engineering, and one day lead as Chief IT Officer.
@@ -47,7 +63,7 @@
       <div class="hero-card">
         <div class="hero-card-label">At a Glance</div>
         <div class="quick-stats">
-          <div class="qs"><div class="qs-val">2</div><div class="qs-key">Years IT Experience</div></div>
+          <div class="qs"><div class="qs-val" data-count="2">0</div><div class="qs-key">Years IT Experience</div></div>
           <div class="qs"><div class="qs-val">CCNA</div><div class="qs-key">In Progress</div></div>
           <div class="qs"><div class="qs-val">ISP</div><div class="qs-key">Next Target Role</div></div>
           <div class="qs"><div class="qs-val">CITO</div><div class="qs-key">Long-term Goal</div></div>
@@ -114,7 +130,7 @@
       </div>
     </div>
     <div class="roadmap-track reveal">
-      <div class="roadmap-step">
+      <div class="roadmap-step stagger">
         <div class="roadmap-node done">
           <img src="icons/roadmap/briefcase.svg" alt="IT Officer" class="node-icon">
         </div>
@@ -122,7 +138,7 @@
         <div class="roadmap-step-sub">End-user support, hardware, basic networking</div>
         <div class="roadmap-badge badge-done">&#10003; Now</div>
       </div>
-      <div class="roadmap-step">
+      <div class="roadmap-step stagger">
         <div class="roadmap-node active">
           <img src="icons/roadmap/signal.svg" alt="ISP Engineer" class="node-icon">
         </div>
@@ -130,7 +146,7 @@
         <div class="roadmap-step-sub">Network ops, ISP infrastructure, CCNA &rarr; CCNP</div>
         <div class="roadmap-badge badge-now">&#9658; Next Target</div>
       </div>
-      <div class="roadmap-step">
+      <div class="roadmap-step stagger">
         <div class="roadmap-node future">
           <img src="icons/roadmap/server.svg" alt="Senior Network Engineer" class="node-icon">
         </div>
@@ -138,7 +154,7 @@
         <div class="roadmap-step-sub">Large-scale infra, team leadership, architecture</div>
         <div class="roadmap-badge badge-next">Future</div>
       </div>
-      <div class="roadmap-step">
+      <div class="roadmap-step stagger">
         <div class="roadmap-node future">
           <img src="icons/roadmap/crown.svg" alt="Chief IT Officer" class="node-icon">
         </div>
@@ -308,13 +324,13 @@
     </div>
 
     <p class="labs-intro reveal">
-      All labs built in <strong>Cisco Packet Tracer</strong> and <strong>GNS3</strong>. Each entry shows the topology, configuration used, and verified output. Replace the placeholder images with your own screenshots.
+      All labs built in <strong>Cisco Packet Tracer</strong>. Each entry shows the topology, the CLI configuration used, and verified output. Replace the placeholder images with your own screenshots from Packet Tracer.
     </p>
 
     <div class="labs-grid">
 
       <!-- LAB 1: TCP/IP -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Layer 3</div>
           <h3 class="lab-title">TCP/IP End-to-End Connectivity</h3>
@@ -350,7 +366,7 @@
       </div>
 
       <!-- LAB 2: DHCP -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Layer 3</div>
           <h3 class="lab-title">DHCP Server Configuration</h3>
@@ -384,7 +400,7 @@
       </div>
 
       <!-- LAB 3: DNS -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Layer 7</div>
           <h3 class="lab-title">DNS Resolution &amp; Configuration</h3>
@@ -418,7 +434,7 @@
       </div>
 
       <!-- LAB 4: VLANs -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Layer 2</div>
           <h3 class="lab-title">VLAN Segmentation &amp; Inter-VLAN Routing</h3>
@@ -452,7 +468,7 @@
       </div>
 
       <!-- LAB 5: OSPF -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Routing Protocol</div>
           <h3 class="lab-title">OSPF Single-Area Configuration</h3>
@@ -486,7 +502,7 @@
       </div>
 
       <!-- LAB 6: BGP -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Routing Protocol</div>
           <h3 class="lab-title">BGP eBGP Peering Between Two ASes</h3>
@@ -520,7 +536,7 @@
       </div>
 
       <!-- LAB 7: NAT/PAT -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Layer 3</div>
           <h3 class="lab-title">NAT / PAT &mdash; Internet Access Simulation</h3>
@@ -554,7 +570,7 @@
       </div>
 
       <!-- LAB 8: STP -->
-      <div class="lab-card reveal">
+      <div class="lab-card reveal stagger">
         <div class="lab-header">
           <div class="lab-tag">Layer 2</div>
           <h3 class="lab-title">Spanning Tree Protocol (STP)</h3>
@@ -592,7 +608,7 @@
     <div class="labs-note reveal">
       <div class="labs-note-icon"><img src="icons/labs/lightbulb.svg" alt="Tip" class="labs-note-svg"></div>
       <div>
-        <strong>How to add your screenshots:</strong> Create an <code>imgs/</code> folder in your repo. Save your Packet Tracer or GNS3 screenshots there. Then in each lab card, remove the placeholder div and uncomment the <code>&lt;img&gt;</code> tag below it, updating the filename to match your file.
+        <strong>How to add your screenshots:</strong> Create an <code>imgs/</code> folder in your repo. Save your Packet Tracer screenshots there. Then in each lab card, remove the placeholder div and uncomment the <code>&lt;img&gt;</code> tag below it, updating the filename to match your file.
       </div>
     </div>
 
@@ -609,7 +625,7 @@
       </div>
     </div>
     <div class="certs-grid">
-      <div class="cert-card reveal">
+      <div class="cert-card reveal stagger">
         <div class="cert-icon amber">
           <img src="icons/certs/book-open.svg" alt="Studying" class="cert-svg">
         </div>
@@ -619,17 +635,17 @@
           <div class="cert-status st-progress">Studying Now</div>
         </div>
       </div>
-      <div class="cert-card reveal">
+      <div class="cert-card reveal stagger">
         <div class="cert-icon">
-          <img src="icons/certs/book-open.svg" alt="Award" class="cert-svg">
+          <img src="icons/certs/award.svg" alt="Award" class="cert-svg">
         </div>
         <div>
           <div class="cert-name">CompTIA A+</div>
           <div class="cert-issuer">CompTIA</div>
-          <div class="cert-status st-planned">Planned</div>
+          <div class="cert-status st-active">Active</div>
         </div>
       </div>
-      <div class="cert-card reveal">
+      <div class="cert-card reveal stagger">
         <div class="cert-icon">
           <img src="icons/certs/target.svg" alt="Planned" class="cert-svg">
         </div>
@@ -639,7 +655,7 @@
           <div class="cert-status st-planned">Planned</div>
         </div>
       </div>
-      <div class="cert-card reveal">
+      <div class="cert-card reveal stagger">
         <div class="cert-icon">
           <img src="icons/certs/target.svg" alt="Planned" class="cert-svg">
         </div>
@@ -668,8 +684,8 @@
           I'm actively seeking opportunities in networking and ISP environments. If you're hiring, mentoring, or just want to talk networking &mdash; I'd love to hear from you.
         </p>
         <div class="contact-links">
-          <a href="mailto:abishkar@example.com" class="contact-link">
-            <span class="contact-link-icon"><img src="icons/contact/mail.svg" alt="Email" class="contact-svg"></span>abishkar@example.com
+          <a href="/cdn-cgi/l/email-protection#f190939882999a9083b19489909c819d94df929e9c" class="contact-link">
+            <span class="contact-link-icon"><img src="icons/contact/mail.svg" alt="Email" class="contact-svg"></span><span class="__cf_email__" data-cfemail="81e0e3e8f2e9eae0f3c1e4f9e0ecf1ede4afe2eeec">[email&#160;protected]</span>
           </a>
           <a href="https://linkedin.com/in/abishkarkafle" target="_blank" class="contact-link">
             <span class="contact-link-icon"><img src="icons/contact/linkedin.svg" alt="LinkedIn" class="contact-svg"></span>linkedin.com/in/abishkarkafle
@@ -678,6 +694,7 @@
             <span class="contact-link-icon"><img src="icons/contact/github.svg" alt="GitHub" class="contact-svg"></span>github.com/abishkarkafle
           </a>
         </div>
+      </div>
       </div>
       <div class="reveal">
         <div class="contact-quote">
@@ -688,5 +705,80 @@
     </div>
   </div>
 </section>
+
+<!-- AVAILABILITY -->
+<section id="availability">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">Open To Work</div>
+        <h2 class="section-title">Availability &amp;<br>Preferences</h2>
+      </div>
+      <div class="avail-status-badge">
+        <span class="avail-pulse"></span>Available Now
+      </div>
+    </div>
+
+    <div class="avail-grid reveal">
+
+      <div class="avail-card stagger">
+        <div class="avail-card-label">Role Types</div>
+        <div class="avail-tags">
+          <span class="avail-tag yes">Network Engineer</span>
+          <span class="avail-tag yes">ISP / Telco</span>
+          <span class="avail-tag yes">NOC Analyst</span>
+          <span class="avail-tag yes">IT Officer</span>
+          <span class="avail-tag yes">Junior Network Admin</span>
+          <span class="avail-tag maybe">Infrastructure Support</span>
+        </div>
+      </div>
+
+      <div class="avail-card stagger">
+        <div class="avail-card-label">Work Type</div>
+        <div class="avail-tags">
+          <span class="avail-tag yes">Full-time</span>
+          <span class="avail-tag yes">On-site</span>
+          <span class="avail-tag maybe">Hybrid</span>
+          <span class="avail-tag no">Remote Only</span>
+        </div>
+      </div>
+
+      <div class="avail-card stagger">
+        <div class="avail-card-label">Location</div>
+        <div class="avail-tags">
+          <span class="avail-tag yes">Pokhara, Nepal</span>
+          <span class="avail-tag yes">Kathmandu, Nepal</span>
+          <span class="avail-tag yes">Birgunj, Nepal</span>
+          <span class="avail-tag maybe">Open to Relocation</span>
+        </div>
+      </div>
+
+      <div class="avail-card stagger">
+        <div class="avail-card-label">Notice Period</div>
+        <div class="avail-tags">
+          <span class="avail-tag yes">Available Immediately</span>
+        </div>
+        <p class="avail-note">Currently employed &mdash; flexible on transition timeline depending on the opportunity.</p>
+      </div>
+
+    </div>
+
+    <div class="cv-download reveal">
+      <div class="cv-download-text">
+        <div class="cv-title">Download my CV</div>
+        <div class="cv-sub">PDF &middot; Updated 2026 &middot; 1 page</div>
+      </div>
+      <a href="cv/abishkar-kafle-cv.pdf" download class="btn-cv">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cv-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>&copy; 2026 Abishkar Kafle &middot; IT Officer &middot; CCNA Candidate &middot; Built for GitHub Pages</footer>
+
 <script src="script.js"></script>
-<footer>&copy; 2026 Abishkar Kafle
+</body>
+</html>
