@@ -36,7 +36,7 @@ IT Officer (Now) ──► ISP Engineer ──► Senior Network Engineer ──
 
 ## 🧪 Packet Tracer Labs
 
-Each lab has a topology screenshot and verified CLI output. Full write-ups on my [portfolio](https://abishkarkafle.github.io).
+Each lab has a topology screenshot and verified CLI output. Full write-ups on my [portfolio](https://abishkarkafle.github.io/abishkarkafle).
 
 - **TCP/IP** — end-to-end connectivity across multiple subnets
 - **DHCP** — router as DHCP server across multiple VLANs
